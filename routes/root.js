@@ -3,9 +3,10 @@ import HomeController from "../controllers/homeController.js";
 
 const rootRouter = express.Router();
 
-rootRouter.get("/", HomeController.index);
+rootRouter.get("/:id", HomeController.index);
 
 rootRouter.post("/login", (req, res) => {
+  console.log(req.body);
   res.send("Login thanh cong!!!");
 });
 
