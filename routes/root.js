@@ -4,6 +4,9 @@ import HomeController from "../controllers/homeController.js";
 const rootRouter = express.Router();
 
 rootRouter.get("/", HomeController.index);
+rootRouter.get("/products", (req, res) => {
+  res.render("products");
+});
 
 rootRouter.post("/login", (req, res) => {
   console.log(req.body);
