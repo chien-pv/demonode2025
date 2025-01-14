@@ -3,7 +3,7 @@ import HomeController from "../controllers/homeController.js";
 
 const rootRouter = express.Router();
 
-rootRouter.get("/:id", HomeController.index);
+rootRouter.get("/", HomeController.index);
 
 rootRouter.post("/login", (req, res) => {
   console.log(req.body);
