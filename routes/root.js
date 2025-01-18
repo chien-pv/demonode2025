@@ -17,9 +17,7 @@ const upload = multer({ storage: storage });
 const rootRouter = express.Router();
 
 rootRouter.get("/", HomeController.index);
-rootRouter.get("/products", (req, res) => {
-  res.render("products");
-});
+rootRouter.get("/products", HomeController.listProduct);
 
 rootRouter.get("/upload", (req, res) => {
   res.render("login");

@@ -1,3 +1,4 @@
+import { db } from "../config/connectBD.js";
 class HomeController {
   static index(req, res) {
     let users = [
@@ -18,6 +19,15 @@ class HomeController {
       },
     ];
     res.render("home/index", { users: [] });
+  }
+
+  static listProduct(req, res) {
+    let sql = "SELECT * FROM products";
+    db.query(sql, (err, data) => {
+      console.log("ERR", err);
+      console.log("DATA", data);
+      res.render("products", { products: data });
+    });
   }
 }
 
