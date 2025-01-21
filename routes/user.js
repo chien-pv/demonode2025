@@ -5,5 +5,6 @@ const userRouter = express.Router();
 
 userRouter.get("/", UserController.index);
 userRouter.get("/new", UserController.new);
+userRouter.post("/create", UserController.create);
 
 export default userRouter;
