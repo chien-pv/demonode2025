@@ -24,11 +24,9 @@ class HomeController {
   static listProduct(req, res) {
     let q = req.query.q;
     if (!q) q = "";
-    // if (q) {
+
     let sql = `SELECT * FROM products where name LIKE '%${q}%'`;
-    // } else {
-    //   sql = `SELECT * FROM products`;
-    // }
+
     console.log(sql);
 
     db.query(sql, (err, data) => {
