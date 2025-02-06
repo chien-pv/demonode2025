@@ -2,6 +2,7 @@ import express from "express";
 import rootRouter from "./routes/root.js";
 import bodyParser from "body-parser";
 import userRouter from "./routes/user.js";
+import productRouter from "./routes/product.js";
 const __dirname = import.meta.dirname;
 
 const app = express();
@@ -17,8 +18,8 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 app.use("/", rootRouter);
-
 app.use("/users", userRouter);
+app.use("/api/products", productRouter);
 
 app.listen(3000, () => {
   console.log("ExpressJS server started!!!");

@@ -1,11 +1,9 @@
 import { db } from "../config/connectBD.js";
+import User from "../models/user.js";
 class UserController {
-  static index(req, res) {
-    let sql = "SELECT * FROM user;";
-    db.query(sql, (err, data) => {
-      console.log(data);
-      res.render("users/index", { users: data });
-    });
+  static async index(req, res) {
+    let data = await User.getAll();
+    res.render("users/index", { users: data });
   }
   static new(req, res) {
     res.render("users/formCreate");
