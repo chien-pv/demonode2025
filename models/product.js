@@ -17,7 +17,9 @@ const Product = sequelize.define(
       type: DataTypes.INTEGER,
     },
   },
-  {}
+  {
+    paranoid: true,
+  }
 );
 
 export default Product;
