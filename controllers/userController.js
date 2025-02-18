@@ -1,8 +1,8 @@
 import { db } from "../config/connectBD.js";
-import User from "../models/user.js";
+import Users from "../models/users.js";
 class UserController {
   static async index(req, res) {
-    let data = await User.getAll();
+    let data = await Users.getAll();
     res.render("users/index", { users: data });
   }
   static new(req, res) {

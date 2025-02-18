@@ -4,9 +4,18 @@ import bodyParser from "body-parser";
 import userRouter from "./routes/user.js";
 import productRouter from "./routes/product.js";
 import cors from "cors";
+import session from "express-session";
+
 const __dirname = import.meta.dirname;
 
 const app = express();
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 app.use(cors());
 
 app.use(express.static("public"));
