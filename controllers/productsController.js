@@ -3,11 +3,11 @@ import { Op } from "sequelize";
 export default class ProductsController {
   static async index(req, res) {
     try {
-      let limit = 2;
+      let limit = 10;
       let name = req.query.name;
       let page = parseInt(req.query.page);
+      page = page ? page : 1;
       let offset = limit * (page - 1);
-
       name = name ? name : "";
 
       let products = await Product.findAll({

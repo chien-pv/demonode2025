@@ -3,9 +3,11 @@ import rootRouter from "./routes/root.js";
 import bodyParser from "body-parser";
 import userRouter from "./routes/user.js";
 import productRouter from "./routes/product.js";
+import cors from "cors";
 const __dirname = import.meta.dirname;
 
 const app = express();
+app.use(cors());
 
 app.use(express.static("public"));
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
