@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Nguyen van A",
+    "email": "abc@gmail.com",
+    "password": "1234234345",
+    "status": true
+  },
+  {
+    "name": "Nguyen van B",
+    "email": "abcd@gmail.com",
+    "password": "1234234345",
+    "status": true
+  },
+  {
+    "name": "Nguyen van C",
+    "email": "abcf@gmail.com",
+    "password": "1234234345",
+    "status": true
+  },
+  {
+    "name": "Nguyen van D",
+    "email": "abcg@gmail.com",
+    "password": "1234234345",
+    "status": true
+  }
+]

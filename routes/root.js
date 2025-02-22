@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import HomeController from "../controllers/homeController.js";
 import multer from "multer";
 import User from "../models/user.js";
+import UserMongo from "../models/usersMongo.js";
 import { checkLoginMiddware } from "../middwares/checkLogin.js";
 const salt = bcrypt.genSaltSync(10);
 
@@ -83,5 +84,9 @@ rootRouter.post("/api/login", async (req, res) => {
     return;
   }
   res.status(400).json({ message: "Đăng Nhập Thất bại!!!" });
+});
+rootRouter.get("/mongo/users", async (req, res) => {
+  const users = await UserMongo.find({});
+  res.json({ users });
 });
 export default rootRouter;

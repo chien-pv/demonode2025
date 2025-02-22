@@ -5,9 +5,11 @@ import userRouter from "./routes/user.js";
 import productRouter from "./routes/product.js";
 import cors from "cors";
 import session from "express-session";
+import { connectMongo } from "./config/connectMongo.js";
 
 const __dirname = import.meta.dirname;
 
+connectMongo();
 const app = express();
 app.use(
   session({
